@@ -1,0 +1,188 @@
+                                                                     Java programming Methods Assignment
+
+QUESTION ONE:
+
+Create a java project, name it methods_in_java, in the project create a package named java_methods and in the package, create a class and named methods. 
+b. in the classmethods, write a method that asks user to enter three numbers, using if statement determine the largest number, the smallest number and display the results in the following format. 
+The smallest number: ?
+The largest number  number: ?
+? is your largest and ? smallest number.
+
+
+
+package java_methods;
+
+import java.util.Scanner;
+
+public class Methods {
+    public static void main(String[] args) {
+        findLargestAndSmallest();
+    }
+
+    public static void findLargestAndSmallest() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the first number: ");
+        int num1 = scanner.nextInt();
+
+        System.out.print("Enter the second number: ");
+        int num2 = scanner.nextInt();
+
+        System.out.print("Enter the third number: ");
+        int num3 = scanner.nextInt();
+
+        int smallest = Math.min(Math.min(num1, num2), num3);
+        int largest = Math.max(Math.max(num1, num2), num3);
+
+        System.out.println("The smallest number: " + smallest);
+        System.out.println("The largest number: " + largest);
+        System.out.printf("%d is your largest and %d is your smallest number.%n", largest, smallest);
+
+        scanner.close();
+    }
+}
+
+
+QUESTION 2:
+
+Create a java project, package and class. In the class, write a method that asks a lecturer to enter marks for three units, java programming, networking and maths. The method should compute the average marks for three units and output the data in the following format. 
+marks for java programming is: ?
+marks for networking is: ?
+marks for maths is: ?
+the average is: ?
+
+
+
+import java.util.Scanner;
+
+public class MarksCalculator {
+    public static void main(String[] args) {
+        calculateAverageMarks();
+    }
+
+    public static void calculateAverageMarks() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter marks for Java Programming: ");
+        double javaMarks = scanner.nextDouble();
+
+        System.out.print("Enter marks for Networking: ");
+        double networkingMarks = scanner.nextDouble();
+
+        System.out.print("Enter marks for Maths: ");
+        double mathsMarks = scanner.nextDouble();
+
+        double average = (javaMarks + networkingMarks + mathsMarks) / 3;
+
+        System.out.println("Marks for Java Programming is: " + javaMarks);
+        System.out.println("Marks for Networking is: " + networkingMarks);
+        System.out.println("Marks for Maths is: " + mathsMarks);
+        System.out.println("The average is: " + average);
+
+        scanner.close();
+    }
+}
+
+
+
+
+
+
+
+
+QUESTION 3:
+
+Write a method that asks user to enter the year, the program should check if  the year is a leap year, and output the text the year you entered is a leap year. 
+Create a java project, a package and a class, in the class, write a program to calculate the area of a triangle. The program should have thee non-static methods:
+One of the methods should ask the user to enter the base and the height of a triangle.
+The other method should compute the area of the rectangle.
+The other method should output the calculated area of the triangle an display it to the user.
+
+
+
+import java.util.Scanner;
+
+public class TriangleAreaCalculator {
+    public static void main(String[] args) {
+       
+        checkLeapYear();
+
+        TriangleAreaCalculator calculator = new TriangleAreaCalculator();
+        
+               double base = calculator.getUserInput("Enter the base of the triangle: ");
+        double height = calculator.getUserInput("Enter the height of the triangle: ");
+        double area = calculator.calculateArea(base, height);
+        calculator.displayResult(area);
+    }
+
+  
+    public static void checkLeapYear() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a year: ");
+        int year = scanner.nextInt();
+
+        if ((year % 4 == 0 && year % 100 != 0) (year % 400 == 0)) {
+            System.out.println("The year you entered is a leap year.");
+        } else {
+            System.out.println("The year you entered is not a leap year.");
+        }
+
+        scanner.close();
+    }
+
+        public double getUserInput(String prompt) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print(prompt);
+        return scanner.nextDouble();
+    }
+
+    public double calculateArea(double base, double height) {
+        return 0.5 * base * height;
+    }
+
+        public void displayResult(double area) {
+        System.out.println("The area of the triangle is: " + area);
+    }
+}
+
+
+
+
+QUESTION 4
+
+Create a java program that has one non-static method, two static methods and a constructor.
+
+
+
+import java.util.Scanner;
+
+public class ExampleProgram {
+   
+    public ExampleProgram() {
+        System.out.println("This is the constructor of ExampleProgram.");
+    }
+
+   
+    public void nonStaticMethod() {
+        System.out.println("This is a non-static method.");
+    }
+
+  
+    public static void staticMethod1() {
+        System.out.println("This is static method 1.");
+    }
+
+    public static void staticMethod2() {
+        System.out.println("This is static method 2.");
+    }
+
+    public static void main(String[] args) {
+               ExampleProgram exampleInstance = new ExampleProgram();
+
+              exampleInstance.nonStaticMethod();
+
+  
+        staticMethod1();
+        staticMethod2();
+    }
+}
